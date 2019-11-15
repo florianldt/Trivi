@@ -1,0 +1,48 @@
+PODS:
+  - AloeStackView (1.2.0)
+  - FloatingPanel (1.7.0)
+  - Kingfisher (5.9.0):
+    - Kingfisher/Core (= 5.9.0)
+  - Kingfisher/Core (5.9.0)
+  - RxCocoa (5.0.1):
+    - RxRelay (~> 5)
+    - RxSwift (~> 5)
+  - RxRelay (5.0.1):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.1)
+  - SwiftLint (0.36.0)
+  - YoutubePlayer-in-WKWebView (0.3.3)
+
+DEPENDENCIES:
+  - AloeStackView
+  - FloatingPanel
+  - Kingfisher
+  - RxCocoa
+  - RxSwift
+  - SwiftLint
+  - YoutubePlayer-in-WKWebView (~> 0.3.0)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - AloeStackView
+    - FloatingPanel
+    - Kingfisher
+    - RxCocoa
+    - RxRelay
+    - RxSwift
+    - SwiftLint
+    - YoutubePlayer-in-WKWebView
+
+SPEC CHECKSUMS:
+  AloeStackView: 8a4ce0efa08128dd78d538372f60c76c224034bb
+  FloatingPanel: f686602da8eff56375e577f19be37348a95f4e24
+  Kingfisher: ff98240aebb7302bdc4f1ecd701761030ce18b16
+  RxCocoa: e741b9749968e8a143e2b787f1dfbff2b63d0a5c
+  RxRelay: 89d54507f4fd4d969e6ec1d4bd7f3673640b4640
+  RxSwift: e2dc62b366a3adf6a0be44ba9f405efd4c94e0c4
+  SwiftLint: fc9859e4e1752340664851f667bb1898b9c90114
+  YoutubePlayer-in-WKWebView: 7694e858c5c3472ed067d6fe34eb9b944845e63c
+
+PODFILE CHECKSUM: e88cc20580e54099faa25158f9d37d7b65cbfb25
+
+COCOAPODS: 1.7.3
