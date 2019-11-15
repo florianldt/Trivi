@@ -97,6 +97,8 @@
 		17D83A03237EEA17005D35B0 /* MentorDetailListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D83A02237EEA17005D35B0 /* MentorDetailListItemCell.swift */; };
 		17D83A06237F1CA0005D35B0 /* MyPageNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D83A05237F1CA0005D35B0 /* MyPageNameView.swift */; };
 		17D83A08237F37CB005D35B0 /* MyPageBasicItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D83A07237F37CB005D35B0 /* MyPageBasicItemView.swift */; };
+		17D83A0A237F48A2005D35B0 /* MyPageSwitchItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D83A09237F48A2005D35B0 /* MyPageSwitchItemView.swift */; };
+		17D83A0C237F4C10005D35B0 /* MyPageLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D83A0B237F4C10005D35B0 /* MyPageLogoView.swift */; };
 		ED9FF87C7B47D8075325BDC4 /* Pods_Trivi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06EF504379A4C8FFD205539C /* Pods_Trivi.framework */; };
 /* End PBXBuildFile section */
 
@@ -194,6 +196,8 @@
 		17D83A02237EEA17005D35B0 /* MentorDetailListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorDetailListItemCell.swift; sourceTree = "<group>"; };
 		17D83A05237F1CA0005D35B0 /* MyPageNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageNameView.swift; sourceTree = "<group>"; };
 		17D83A07237F37CB005D35B0 /* MyPageBasicItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageBasicItemView.swift; sourceTree = "<group>"; };
+		17D83A09237F48A2005D35B0 /* MyPageSwitchItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageSwitchItemView.swift; sourceTree = "<group>"; };
+		17D83A0B237F4C10005D35B0 /* MyPageLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageLogoView.swift; sourceTree = "<group>"; };
 		2C9C190C4AE9A8D50CFB37BF /* Pods-Trivi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trivi.release.xcconfig"; path = "Target Support Files/Pods-Trivi/Pods-Trivi.release.xcconfig"; sourceTree = "<group>"; };
 		653E2094224C0B8839A36AED /* Pods-Trivi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trivi.debug.xcconfig"; path = "Target Support Files/Pods-Trivi/Pods-Trivi.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -675,6 +679,8 @@
 			children = (
 				17D83A05237F1CA0005D35B0 /* MyPageNameView.swift */,
 				17D83A07237F37CB005D35B0 /* MyPageBasicItemView.swift */,
+				17D83A09237F48A2005D35B0 /* MyPageSwitchItemView.swift */,
+				17D83A0B237F4C10005D35B0 /* MyPageLogoView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -847,6 +853,7 @@
 				1775089C237DD0F500C1DDCF /* BotMessage.swift in Sources */,
 				170C6EC4237EB12D0091A7E8 /* LetterDetailHeadlineView.swift in Sources */,
 				17750874237D0E9400C1DDCF /* FeedVideoViewModel.swift in Sources */,
+				17D83A0C237F4C10005D35B0 /* MyPageLogoView.swift in Sources */,
 				17D83A01237EE769005D35B0 /* MentorDetailListCell.swift in Sources */,
 				17750879237D140300C1DDCF /* VideoFeedLargeSectionCell.swift in Sources */,
 				170C6EB4237E81280091A7E8 /* UIFont+Extension.swift in Sources */,
@@ -865,6 +872,7 @@
 				17750846237C2B1B00C1DDCF /* NetworkingProviderProtocol.swift in Sources */,
 				17750881237D1F9F00C1DDCF /* FeedVideoDefaultCell.swift in Sources */,
 				1775088F237DC98F00C1DDCF /* QNAResponse.swift in Sources */,
+				17D83A0A237F48A2005D35B0 /* MyPageSwitchItemView.swift in Sources */,
 				1775088C237DC91000C1DDCF /* ChatInteractor.swift in Sources */,
 				1775086B237D0AF100C1DDCF /* Video.swift in Sources */,
 				170C6EC6237EB2BF0091A7E8 /* LetterDetailInformationView.swift in Sources */,
