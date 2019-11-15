@@ -1,0 +1,26 @@
+[
+    {
+        "id": "hello",
+        "avatar": "https://komppi.net/wp-content/uploads/2018/08/Anni-Orava-400x400-370x370.jpg",
+        "name": "Anni",
+        "description": "Annilla on kokemusta monenlaisten oireiden (ahdistus, masennus, psykoosit) hoidosta. Kognitiivisen psykoterapian viitekehys. Kela.",
+        "languages": ["fi"],
+        "rating": 4
+    },
+    {
+        "id": "hello",
+        "avatar": "https://komppi.net/wp-content/uploads/2019/08/Arto-Pylv%C3%A4s-370x370.jpg",
+        "name": "Arto",
+        "description": "Arto on kiinnostunut tunteiden säätelystä ja ymmärtämisestä. Hän on tottunut työskentelemään nuorten ja aikuisten kanssa vaikeissakin tilanteissa. Psykodynaaminen viitekehys. Kela.",
+        "languages": ["fi", "en"],
+        "rating": 4
+    },
+    {
+        "id": "hello",
+        "avatar": "https://komppi.net/wp-content/uploads/2019/08/Marika-Lahtinen-3.png",
+        "name": "Anni",
+        "description": "Marikalla on pitkä työkokemus psykoterapeuttina, perusterveydenhuollossa sekä terveydenhuollon johtotehtävissä.",
+        "languages": ["fi", "en"],
+        "rating": 5
+    }
+]
