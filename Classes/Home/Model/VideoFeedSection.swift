@@ -14,7 +14,7 @@ struct VideoFeedSection: Decodable {
         case large
         case `default`
     }
-    let id: String
+    let id: Int
     let type: `Type`
     let title: String
     let videos: [Video]
