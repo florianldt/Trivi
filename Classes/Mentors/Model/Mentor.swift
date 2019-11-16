@@ -9,7 +9,7 @@
 import Foundation
 
 struct Mentor: Decodable {
-    let id: String
+    let id: Int
     let avatar: String
     let name: String
     let description: String
