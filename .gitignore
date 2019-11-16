@@ -79,3 +79,5 @@ iOSInjectionProject/
 
 # SwiftLint
 Pods/SwiftLint
+
+Secrets.swift
