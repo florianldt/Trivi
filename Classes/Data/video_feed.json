@@ -1,0 +1,53 @@
+[
+    {
+        "id": "hello",
+        "type": 0,
+        "title": "For you",
+        "videos": [
+            {
+                "id": "hello",
+                "cover": "www.google.com",
+                "title": "Video title"
+            },
+            {
+                "id": "hello",
+                "cover": "www.google.com",
+                "title": "Video title"
+            }
+        ]
+    },
+    {
+        "id": "hello",
+        "type": 1,
+        "title": "For relationship",
+        "videos": [
+            {
+                "id": "hello",
+                "cover": "www.google.com",
+                "title": "Video title"
+            },
+            {
+                "id": "hello",
+                "cover": "www.google.com",
+                "title": "Video title"
+            }
+        ]
+    },
+    {
+        "id": "hello",
+        "type": 0,
+        "title": "For you",
+        "videos": [
+            {
+                "id": "hello",
+                "cover": "www.google.com",
+                "title": "Video title"
+            },
+            {
+                "id": "hello",
+                "cover": "www.google.com",
+                "title": "Video title"
+            }
+        ]
+    },
+]
