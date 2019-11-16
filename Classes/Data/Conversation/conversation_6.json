@@ -1,0 +1,21 @@
+{
+  "activities": [
+    {
+      "type": "message",
+      "id": "ILR6LnjYkc95uhr8B3hmAV-5|0000006",
+      "timestamp": "2019-11-08T08:16:39.1056208Z",
+      "channelId": "directline",
+      "from": {
+        "id": "bot-test-1234",
+        "name": "bot-test-1234"
+      },
+      "conversation": {
+        "id": "ILR6LnjYkc95uhr8B3hmAV-5"
+      },
+      "text": "{\"answer\":\"Just watch this at first. It will only take 3 min. \",\"metadata\":[{\"name\":\"url\",\"value\":\"oppoijnh\"}, {\"name\":\"title\",\"value\":\"Gabby Bernstein - Are you worthy of good in your life?\"}, {\"name\":\"likes\",\"value\":\"867\"}],\"context\":{\"isContextOnly\":false,\"prompts\":[]},\"type\":1}",
+      "inputHint": "acceptingInput",
+      "replyToId": "ILR6LnjYkc95uhr8B3hmAV-5|0000005"
+    }
+  ],
+  "watermark": "6"
+}

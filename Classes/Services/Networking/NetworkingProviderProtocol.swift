@@ -14,4 +14,13 @@ protocol NetworkingProviderProtocol {
 
     func loadLetters(completionHandler: ((NetworkingProviderResultWithValue<[Letter]>) -> Void)?)
     func loadSample(_ sample: String) -> BotMessage
+
+    // BOT
+    func createConversation(completionHandler: ((NetworkingProviderResultWithValue<Conversation>) -> Void)?)
+    func sendActivity(conversation: Conversation,
+                      userRequest: UserActivityRequest,
+                      completionHandler: ((NetworkingProviderResultWithValue<UserActivityResponse>) -> Void)?)
+    func fetchBotActivities(conversation: Conversation,
+                            watermark: String,
+                            completionHandler: ((NetworkingProviderResultWithValue<BotMessage>) -> Void)?)
 }

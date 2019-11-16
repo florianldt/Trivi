@@ -1,0 +1,21 @@
+{
+  "activities": [
+    {
+      "type": "message",
+      "id": "ILR6LnjYkc95uhr8B3hmAV-5|0000002",
+      "timestamp": "2019-11-08T08:15:32.3362741Z",
+      "channelId": "directline",
+      "from": {
+        "id": "bot-test-1234",
+        "name": "bot-test-1234"
+      },
+      "conversation": {
+        "id": "ILR6LnjYkc95uhr8B3hmAV-5"
+      },
+      "text": "{\"answer\":\"Reslut can be different by your gender. Can you tell me it? \",\"metadata\":[{\"name\":\"editorial\",\"value\":\"chitchat\"}],\"context\":{\"isContextOnly\":false,\"prompts\":[{\"displayOrder\":0,\"qnaId\":101,\"qna\":null,\"displayText\":\"Man\"}, {\"displayOrder\":1,\"qnaId\":102,\"qna\":null,\"displayText\":\"Woman\"}]},\"type\":0}",
+      "inputHint": "acceptingInput",
+      "replyToId": "ILR6LnjYkc95uhr8B3hmAV-5|0000001"
+    }
+  ],
+  "watermark": "2"
+}

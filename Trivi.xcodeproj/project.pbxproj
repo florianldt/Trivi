@@ -99,6 +99,13 @@
 		17D83A08237F37CB005D35B0 /* MyPageBasicItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D83A07237F37CB005D35B0 /* MyPageBasicItemView.swift */; };
 		17D83A0A237F48A2005D35B0 /* MyPageSwitchItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D83A09237F48A2005D35B0 /* MyPageSwitchItemView.swift */; };
 		17D83A0C237F4C10005D35B0 /* MyPageLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D83A0B237F4C10005D35B0 /* MyPageLogoView.swift */; };
+		17D83A10237FF0FC005D35B0 /* VideoMessageThumbnailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D83A0F237FF0FC005D35B0 /* VideoMessageThumbnailView.swift */; };
+		17D83A12237FFC96005D35B0 /* VideoThumbnailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D83A11237FFC96005D35B0 /* VideoThumbnailViewModel.swift */; };
+		17D83A1423801A97005D35B0 /* Conversation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D83A1323801A97005D35B0 /* Conversation.swift */; };
+		17D83A1723801B44005D35B0 /* UserActivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D83A1623801B44005D35B0 /* UserActivity.swift */; };
+		17D83A1923801C87005D35B0 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D83A1823801C87005D35B0 /* Secrets.swift */; };
+		17D83A1C238025F4005D35B0 /* BotChoiceSimpleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D83A1B238025F4005D35B0 /* BotChoiceSimpleViewController.swift */; };
+		17D83A1E2380690C005D35B0 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D83A1D2380690C005D35B0 /* UIStackView+Extension.swift */; };
 		ED9FF87C7B47D8075325BDC4 /* Pods_Trivi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 06EF504379A4C8FFD205539C /* Pods_Trivi.framework */; };
 /* End PBXBuildFile section */
 
@@ -198,6 +205,13 @@
 		17D83A07237F37CB005D35B0 /* MyPageBasicItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageBasicItemView.swift; sourceTree = "<group>"; };
 		17D83A09237F48A2005D35B0 /* MyPageSwitchItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageSwitchItemView.swift; sourceTree = "<group>"; };
 		17D83A0B237F4C10005D35B0 /* MyPageLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageLogoView.swift; sourceTree = "<group>"; };
+		17D83A0F237FF0FC005D35B0 /* VideoMessageThumbnailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoMessageThumbnailView.swift; sourceTree = "<group>"; };
+		17D83A11237FFC96005D35B0 /* VideoThumbnailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoThumbnailViewModel.swift; sourceTree = "<group>"; };
+		17D83A1323801A97005D35B0 /* Conversation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Conversation.swift; sourceTree = "<group>"; };
+		17D83A1623801B44005D35B0 /* UserActivity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserActivity.swift; sourceTree = "<group>"; };
+		17D83A1823801C87005D35B0 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		17D83A1B238025F4005D35B0 /* BotChoiceSimpleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BotChoiceSimpleViewController.swift; sourceTree = "<group>"; };
+		17D83A1D2380690C005D35B0 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
 		2C9C190C4AE9A8D50CFB37BF /* Pods-Trivi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trivi.release.xcconfig"; path = "Target Support Files/Pods-Trivi/Pods-Trivi.release.xcconfig"; sourceTree = "<group>"; };
 		653E2094224C0B8839A36AED /* Pods-Trivi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Trivi.debug.xcconfig"; path = "Target Support Files/Pods-Trivi/Pods-Trivi.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -337,10 +351,11 @@
 		1775080C237BEFCE00C1DDCF /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				17750884237DB5D600C1DDCF /* Chat */,
+				17D83A1A238025D2005D35B0 /* Bot Choice */,
 				1775084C237C2C0B00C1DDCF /* Data */,
 				17750841237C2ACD00C1DDCF /* Shared */,
 				1775082D237BF8DE00C1DDCF /* Home */,
+				17750884237DB5D600C1DDCF /* Chat */,
 				1775082E237BF8E300C1DDCF /* Mentors */,
 				170C6EC9237EC2020091A7E8 /* Mentor Detail */,
 				1775082F237BF8EB00C1DDCF /* Letters */,
@@ -392,6 +407,8 @@
 				17750875237D137100C1DDCF /* UITableView+Extension.swift */,
 				17750888237DB9D600C1DDCF /* Notification+Extension.swift */,
 				170C6EB3237E81280091A7E8 /* UIFont+Extension.swift */,
+				17D83A1823801C87005D35B0 /* Secrets.swift */,
+				17D83A1D2380690C005D35B0 /* UIStackView+Extension.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -602,6 +619,7 @@
 				177508A7237DD46400C1DDCF /* ChatViewModel.swift */,
 				177508A9237DD48F00C1DDCF /* TextMessageViewModel.swift */,
 				177508AB237DD4A700C1DDCF /* VideoMessageViewModel.swift */,
+				17D83A11237FFC96005D35B0 /* VideoThumbnailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -609,8 +627,7 @@
 		1775088D237DC97C00C1DDCF /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				1775088E237DC98F00C1DDCF /* QNAResponse.swift */,
-				1775089B237DD0F500C1DDCF /* BotMessage.swift */,
+				17D83A1523801B15005D35B0 /* Bot */,
 				1775089D237DD11600C1DDCF /* BotActivity.swift */,
 				1775089F237DD17D00C1DDCF /* MessageType.swift */,
 				177508A1237DD19000C1DDCF /* Message.swift */,
@@ -636,6 +653,7 @@
 			children = (
 				177508AE237DD54B00C1DDCF /* TextMessageCell.swift */,
 				177508B0237DD56300C1DDCF /* VideoMessageCell.swift */,
+				17D83A0F237FF0FC005D35B0 /* VideoMessageThumbnailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -683,6 +701,25 @@
 				17D83A0B237F4C10005D35B0 /* MyPageLogoView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		17D83A1523801B15005D35B0 /* Bot */ = {
+			isa = PBXGroup;
+			children = (
+				17D83A1323801A97005D35B0 /* Conversation.swift */,
+				17D83A1623801B44005D35B0 /* UserActivity.swift */,
+				1775088E237DC98F00C1DDCF /* QNAResponse.swift */,
+				1775089B237DD0F500C1DDCF /* BotMessage.swift */,
+			);
+			path = Bot;
+			sourceTree = "<group>";
+		};
+		17D83A1A238025D2005D35B0 /* Bot Choice */ = {
+			isa = PBXGroup;
+			children = (
+				17D83A1B238025F4005D35B0 /* BotChoiceSimpleViewController.swift */,
+			);
+			path = "Bot Choice";
 			sourceTree = "<group>";
 		};
 		5D0BA06A861AC400B71E15EB /* Frameworks */ = {
@@ -836,6 +873,7 @@
 				170C6EB2237E7D9A0091A7E8 /* LetterCell.swift in Sources */,
 				170C6ECF237EC26E0091A7E8 /* MentorInteractor.swift in Sources */,
 				17D839EE237ECB5B005D35B0 /* MentorDetailReviewViewModel.swift in Sources */,
+				17D83A12237FFC96005D35B0 /* VideoThumbnailViewModel.swift in Sources */,
 				177508B6237DD63000C1DDCF /* LoadingTVCell.swift in Sources */,
 				17D839F1237ED85B005D35B0 /* MentorDetailAvatarCell.swift in Sources */,
 				1775084B237C2BAE00C1DDCF /* Mentor.swift in Sources */,
@@ -853,13 +891,16 @@
 				1775089C237DD0F500C1DDCF /* BotMessage.swift in Sources */,
 				170C6EC4237EB12D0091A7E8 /* LetterDetailHeadlineView.swift in Sources */,
 				17750874237D0E9400C1DDCF /* FeedVideoViewModel.swift in Sources */,
+				17D83A1923801C87005D35B0 /* Secrets.swift in Sources */,
 				17D83A0C237F4C10005D35B0 /* MyPageLogoView.swift in Sources */,
+				17D83A1C238025F4005D35B0 /* BotChoiceSimpleViewController.swift in Sources */,
 				17D83A01237EE769005D35B0 /* MentorDetailListCell.swift in Sources */,
 				17750879237D140300C1DDCF /* VideoFeedLargeSectionCell.swift in Sources */,
 				170C6EB4237E81280091A7E8 /* UIFont+Extension.swift in Sources */,
 				1775089E237DD11600C1DDCF /* BotActivity.swift in Sources */,
 				17750853237C2DD000C1DDCF /* MentorsViewModel.swift in Sources */,
 				1775080E237BEFCE00C1DDCF /* AppDelegate.swift in Sources */,
+				17D83A1423801A97005D35B0 /* Conversation.swift in Sources */,
 				17750858237C2E1B00C1DDCF /* ErrorViewModel.swift in Sources */,
 				1775083C237BF98100C1DDCF /* MyPageViewController.swift in Sources */,
 				17D839F7237EDDDF005D35B0 /* MentorDetailSeparationCell.swift in Sources */,
@@ -889,6 +930,7 @@
 				177508A4237DD1EB00C1DDCF /* MessageWrapper.swift in Sources */,
 				17750862237C386800C1DDCF /* MentorCell.swift in Sources */,
 				170C6ECB237EC21C0091A7E8 /* MentorDetailViewController.swift in Sources */,
+				17D83A10237FF0FC005D35B0 /* VideoMessageThumbnailView.swift in Sources */,
 				17750883237D211300C1DDCF /* ChatBotCallerButton.swift in Sources */,
 				17750860237C331700C1DDCF /* UICollectionView+Extension.swift in Sources */,
 				170C6EBB237E922C0091A7E8 /* LetterDetailViewController.swift in Sources */,
@@ -915,6 +957,8 @@
 				177508B8237DD64900C1DDCF /* ErrorTVCell.swift in Sources */,
 				177508A6237DD40700C1DDCF /* User.swift in Sources */,
 				17D839F5237EDBAD005D35B0 /* MentorDetailReviewLanguagesCell.swift in Sources */,
+				17D83A1E2380690C005D35B0 /* UIStackView+Extension.swift in Sources */,
+				17D83A1723801B44005D35B0 /* UserActivity.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
