@@ -25,7 +25,7 @@ class MyPageNameView: UIView {
         addSubview(nameLabel)
 
         NSLayoutConstraint.activate([
-            nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 64),
+            nameLabel.topAnchor.constraint(equalTo: topAnchor, constant: 10),
             nameLabel.leftAnchor.constraint(equalTo: leftAnchor, constant: 21),
             nameLabel.rightAnchor.constraint(equalTo: rightAnchor, constant: -21),
             nameLabel.heightAnchor.constraint(equalToConstant: 36),

@@ -40,17 +40,18 @@ class MyPageViewController: AloeStackViewController {
         let view = MyPageNameView()
         stackView.addRow(view)
         stackView.hideSeparator(forRow: view)
+        stackView.setInset(forRow: view, inset: UIEdgeInsets(top: 60, left: 0, bottom: 0, right: 0))
     }
 
     private func setupMessagesView() {
         let view = MyPageBasicItemView()
-        view.configure(imageName: "mypage_message", text: "Messages", iconLeftInset: 30)
+        view.configure(imageName: "mypage_message", text: "Messages", iconLeftInset: 30, badgeNumber: 1)
         stackView.addRow(view)
     }
 
     private func setupSessionView() {
         let view = MyPageBasicItemView()
-        view.configure(imageName: "mypage_session", text: "Session", iconLeftInset: 31)
+        view.configure(imageName: "mypage_session", text: "Session", iconLeftInset: 31, badgeNumber: 5)
         stackView.addRow(view)
     }
 
@@ -90,7 +91,7 @@ class MyPageViewController: AloeStackViewController {
         view.disclosureImageView.isHidden = true
         stackView.addRow(view)
         stackView.hideSeparator(forRow: view)
-        stackView.setInset(forRow: view, inset: UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0))
+        stackView.setInset(forRow: view, inset: UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0))
     }
 
     private func setupNewLetterNotificationView() {
@@ -98,17 +99,19 @@ class MyPageViewController: AloeStackViewController {
         view.configure(text: "New letter", isOn: true)
         stackView.addRow(view)
     }
+
     private func setupSessionNotificationView() {
         let view = MyPageSwitchItemView()
         view.configure(text: "Session", isOn: false)
         stackView.addRow(view)
     }
+
     private func setupRecommendNotificationView() {
         let view = MyPageSwitchItemView()
         view.configure(text: "Recommend", isOn: true)
         stackView.addRow(view)
         stackView.hideSeparator(forRow: view)
-        stackView.setInset(forRow: view, inset: UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0))
+        stackView.setInset(forRow: view, inset: UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0))
     }
 
     private func setupLogoView() {

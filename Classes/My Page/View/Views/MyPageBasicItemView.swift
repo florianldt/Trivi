@@ -37,6 +37,7 @@ class MyPageBasicItemView: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 15, weight: .medium)
+        label.textColor = UIColor.Names.white.color
         return label
     }()
 
@@ -58,7 +59,7 @@ class MyPageBasicItemView: UIView {
         addSubview(disclosureImageView)
 
         NSLayoutConstraint.activate([
-            heightAnchor.constraint(equalToConstant: 56),
+            heightAnchor.constraint(equalToConstant: 52),
         ])
 
         itemIconImageViewLeftConstraint = itemIconImageView.leftAnchor.constraint(equalTo: leftAnchor, constant: 30)
@@ -75,6 +76,18 @@ class MyPageBasicItemView: UIView {
         ])
 
         NSLayoutConstraint.activate([
+            badgeView.rightAnchor.constraint(equalTo: rightAnchor, constant: -37),
+            badgeView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 0),
+            badgeView.widthAnchor.constraint(equalToConstant: 18),
+            badgeView.heightAnchor.constraint(equalToConstant: 18),
+        ])
+
+        NSLayoutConstraint.activate([
+            badgeLabel.centerYAnchor.constraint(equalTo: badgeView.centerYAnchor, constant: 0),
+            badgeLabel.centerXAnchor.constraint(equalTo: badgeView.centerXAnchor, constant: 0),
+        ])
+
+        NSLayoutConstraint.activate([
             disclosureImageView.rightAnchor.constraint(equalTo: rightAnchor, constant: -23),
             disclosureImageView.centerYAnchor.constraint(equalTo: centerYAnchor, constant: 0),
         ])
@@ -84,10 +97,18 @@ class MyPageBasicItemView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func configure(imageName: String, text: String, iconLeftInset: CGFloat) {
+    func configure(imageName: String, text: String, iconLeftInset: CGFloat, badgeNumber: Int? = nil) {
         itemIconImageView.image = UIImage(named: imageName)
         itemLabel.text = text
         itemIconImageViewLeftConstraint.constant = iconLeftInset
+        if let badgeNumber = badgeNumber {
+            badgeLabel.isHidden = false
+            badgeView.isHidden = false
+            badgeLabel.text = String(format: "%i", badgeNumber)
+        } else {
+            badgeLabel.isHidden = true
+            badgeView.isHidden = true
+        }
     }
 
 }

@@ -35,12 +35,12 @@ class MyPageLogoView: UIView {
         NSLayoutConstraint.activate([
             appImageView.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 0),
             appImageView.topAnchor.constraint(equalTo: topAnchor, constant: 16),
-            appImageView.widthAnchor.constraint(equalToConstant: 59),
+            appImageView.widthAnchor.constraint(equalToConstant: 42),
         ])
 
         NSLayoutConstraint.activate([
             appLabel.centerXAnchor.constraint(equalTo: centerXAnchor, constant: 0),
-            appLabel.topAnchor.constraint(equalTo: appImageView.bottomAnchor, constant: -10),
+            appLabel.topAnchor.constraint(equalTo: appImageView.bottomAnchor, constant: -20),
         ])
 
         NSLayoutConstraint.activate([
