@@ -11,6 +11,7 @@ import UIKit
 class VideoFeedDefaultSectionCell: UITableViewCell {
 
     var viewModel: VideoSectionViewModel?
+    weak var delegate: VideoFeedSectionCellDelegate?
 
     let titleLabel: UILabel = {
         let label = UILabel()
@@ -55,11 +56,11 @@ class VideoFeedDefaultSectionCell: UITableViewCell {
             collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 9),
             collectionView.leftAnchor.constraint(equalTo: contentView.leftAnchor),
             collectionView.rightAnchor.constraint(equalTo: contentView.rightAnchor),
-            collectionView.heightAnchor.constraint(equalToConstant: 164),
+            collectionView.heightAnchor.constraint(equalToConstant: 186),
         ])
 
         NSLayoutConstraint.activate([
-            contentView.bottomAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 8),
+            contentView.bottomAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 51),
         ])
     }
 
@@ -91,7 +92,18 @@ extension VideoFeedDefaultSectionCell: UICollectionViewDataSource {
 extension VideoFeedDefaultSectionCell: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 208, height: 164)
+        return CGSize(width: 208, height: 186)
+    }
+}
+
+extension VideoFeedDefaultSectionCell: UICollectionViewDelegate {
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard
+            let cell = collectionView.cellForItem(at: indexPath) as? VideoFeedDefaultCell,
+            let viewModel = cell.viewModel
+            else { return }
+        delegate?.didSelectVideo(of: viewModel.id)
     }
 }
 

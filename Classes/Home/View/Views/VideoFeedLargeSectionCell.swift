@@ -8,9 +8,14 @@
 
 import UIKit
 
+protocol VideoFeedSectionCellDelegate: class {
+    func didSelectVideo(of id: String)
+}
+
 class VideoFeedLargeSectionCell: UITableViewCell {
 
     var viewModel: VideoSectionViewModel?
+    weak var delegate: VideoFeedSectionCellDelegate?
 
     let titleLabel: UILabel = {
         let label = UILabel()
@@ -55,11 +60,11 @@ class VideoFeedLargeSectionCell: UITableViewCell {
             collectionView.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 9),
             collectionView.leftAnchor.constraint(equalTo: contentView.leftAnchor),
             collectionView.rightAnchor.constraint(equalTo: contentView.rightAnchor),
-            collectionView.heightAnchor.constraint(equalToConstant: 253),
+            collectionView.heightAnchor.constraint(equalToConstant: 284),
         ])
 
         NSLayoutConstraint.activate([
-            contentView.bottomAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 8),
+            contentView.bottomAnchor.constraint(equalTo: collectionView.bottomAnchor, constant: 36),
         ])
     }
     
@@ -91,6 +96,17 @@ extension VideoFeedLargeSectionCell: UICollectionViewDataSource {
 extension VideoFeedLargeSectionCell: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 368, height: 253)
+        return CGSize(width: 368, height: 284)
+    }
+}
+
+extension VideoFeedLargeSectionCell: UICollectionViewDelegate {
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        guard
+            let cell = collectionView.cellForItem(at: indexPath) as? VideoFeedLargeCell,
+            let viewModel = cell.viewModel
+            else { return }
+        delegate?.didSelectVideo(of: viewModel.id)
     }
 }

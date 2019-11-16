@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import SafariServices
 
 class HomeViewController: UIViewController {
 
@@ -179,10 +180,12 @@ extension HomeViewController: UITableViewDataSource {
             returnCell = cell
         case .videoLargeSection(let viewModel):
             let cell = tableView.dequeue(VideoFeedLargeSectionCell.self, for: indexPath)
+            cell.delegate = self
             cell.configure(with: viewModel)
             returnCell = cell
         case .videoDefaultSection(let viewModel):
             let cell = tableView.dequeue(VideoFeedDefaultSectionCell.self, for: indexPath)
+            cell.delegate = self
             cell.configure(with: viewModel)
             returnCell = cell
         case .failure(let viewModel):
@@ -196,5 +199,14 @@ extension HomeViewController: UITableViewDataSource {
 extension HomeViewController: ChatViewControllerDelegate {
     func isChatVisible(_ visible: Bool) {
         isVisible = visible
+    }
+}
+
+extension HomeViewController: VideoFeedSectionCellDelegate {
+
+    func didSelectVideo(of id: String) {
+        guard let url = URL(string: String(format: "https://www.youtube.com/watch?v=%@", id)) else { return }
+        let safariViewController = SFSafariViewController(url: url)
+        present(safariViewController, animated: true)
     }
 }

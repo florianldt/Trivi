@@ -10,6 +10,8 @@ import UIKit
 
 class VideoFeedLargeCell: UICollectionViewCell {
 
+    var viewModel: FeedVideoViewModel?
+
     let coverImageView: UIImageView = {
         let iv = UIImageView()
         iv.translatesAutoresizingMaskIntoConstraints = false
@@ -24,8 +26,8 @@ class VideoFeedLargeCell: UICollectionViewCell {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.numberOfLines = 2
-        label.font = UIFont.systemFont(ofSize: 17, weight: .medium)
-        label.textColor = UIColor.Names.darkBlue.color
+        label.font = UIFont.systemFont(ofSize: 21, weight: .semibold)
+        label.textColor = UIColor.Names.blackBlue.color
         return label
     }()
 
@@ -44,7 +46,7 @@ class VideoFeedLargeCell: UICollectionViewCell {
         ])
 
         NSLayoutConstraint.activate([
-            titleLabel.topAnchor.constraint(equalTo: coverImageView.bottomAnchor, constant: 6),
+            titleLabel.topAnchor.constraint(equalTo: coverImageView.bottomAnchor, constant: 2),
             titleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor),
             titleLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor),
         ])
@@ -55,6 +57,7 @@ class VideoFeedLargeCell: UICollectionViewCell {
     }
     
     func configure(with viewModel: FeedVideoViewModel) {
+        self.viewModel = viewModel
         coverImageView.kf.setImage(with: viewModel.cover)
         titleLabel.text = viewModel.title
     }
