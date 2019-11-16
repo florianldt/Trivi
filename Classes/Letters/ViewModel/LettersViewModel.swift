@@ -40,7 +40,7 @@ struct LettersViewModel {
         case .failed(let error):
             let errorViewModel = ErrorViewModel.from(error)
             viewModels = [
-                .failure(errorViewModel)
+                .failure(errorViewModel),
             ]
         }
     }

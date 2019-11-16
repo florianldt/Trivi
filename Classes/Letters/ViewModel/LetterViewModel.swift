@@ -24,6 +24,9 @@ struct LetterViewModel {
     let id: String
     let title: String
     let message: String
+    let videoId: String?
+    let videoPoster: URL?
+    let videoTitle: String?
     let user: UserViewModel
     let sentAt: String
 }
@@ -41,9 +44,13 @@ extension LetterViewModel {
                                                   languages: $0.user.languages,
                                                   headline: $0.user.headline,
                                                   ratingImageName: String(format: "rating_%i", $0.user.rating))
+                let stringUrl: String? = $0.videoId != nil ? String(format: "https://img.youtube.com/vi/%@/hqdefault.jpg", $0.videoId!) : nil
                 return LetterViewModel(id: $0.id,
                                        title: $0.title,
                                        message: $0.message,
+                                       videoId: $0.videoId,
+                                       videoPoster: stringUrl != nil ? URL(string: stringUrl!.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!) : nil,
+                                       videoTitle: $0.videoTitle,
                                        user: userViewModel,
                                        sentAt: $0.sentAt.letterFormat)
         }

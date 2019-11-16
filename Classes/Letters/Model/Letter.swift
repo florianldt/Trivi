@@ -36,12 +36,16 @@ struct Letter: Decodable {
     let id: String
     let title: String
     let message: String
+    let videoId: String?
+    let videoTitle: String?
     let user: User
     let sentAt: String
 
     enum CodingKeys: String, CodingKey {
         case id
         case title
+        case videoId = "video_id"
+        case videoTitle = "video_title"
         case message
         case user
         case sentAt = "sent_at"

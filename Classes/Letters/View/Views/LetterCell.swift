@@ -71,12 +71,41 @@ class LetterCell: UITableViewCell {
         return label
     }()
 
+    let videoThumbnail: UIImageView = {
+        let iv = UIImageView()
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        iv.layer.masksToBounds = true
+        iv.layer.cornerRadius = 12
+        iv.contentMode = .scaleAspectFill
+        return iv
+    }()
+
+    let playImageView: UIImageView = {
+        let iv = UIImageView()
+        iv.translatesAutoresizingMaskIntoConstraints = false
+        iv.image = UIImage(named: "play")
+        return iv
+    }()
+
+    let videoTitle: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        label.font = label.font.italic
+        label.numberOfLines = 3
+        label.textColor = UIColor.Names.blackBlue.color
+        return label
+    }()
+
     let separatorView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
         view.backgroundColor = UIColor.Names.separator.color
         return view
     }()
+
+    var separatorNoVideoBottomConstraint: NSLayoutConstraint!
+    var separatorVideoBottomConstraint: NSLayoutConstraint!
 
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -90,6 +119,9 @@ class LetterCell: UITableViewCell {
         contentView.addSubview(timeLabel)
         contentView.addSubview(titleLabel)
         contentView.addSubview(messageLabel)
+        contentView.addSubview(videoThumbnail)
+        contentView.addSubview(playImageView)
+        contentView.addSubview(videoTitle)
         contentView.addSubview(separatorView)
 
         NSLayoutConstraint.activate([
@@ -131,7 +163,27 @@ class LetterCell: UITableViewCell {
         ])
 
         NSLayoutConstraint.activate([
-            separatorView.bottomAnchor.constraint(equalTo: messageLabel.bottomAnchor, constant: 25),
+            videoThumbnail.topAnchor.constraint(equalTo: messageLabel.bottomAnchor, constant: 6),
+            videoThumbnail.leftAnchor.constraint(equalTo: messageLabel.leftAnchor, constant: 0),
+            videoThumbnail.rightAnchor.constraint(equalTo: messageLabel.rightAnchor, constant: 0),
+            videoThumbnail.heightAnchor.constraint(equalToConstant: 173),
+        ])
+
+        NSLayoutConstraint.activate([
+            playImageView.centerYAnchor.constraint(equalTo: videoThumbnail.centerYAnchor),
+            playImageView.centerXAnchor.constraint(equalTo: videoThumbnail.centerXAnchor),
+        ])
+
+        NSLayoutConstraint.activate([
+            videoTitle.topAnchor.constraint(equalTo: videoThumbnail.bottomAnchor, constant: 6),
+            videoTitle.leftAnchor.constraint(equalTo: videoThumbnail.leftAnchor, constant: 0),
+            videoTitle.rightAnchor.constraint(equalTo: videoThumbnail.rightAnchor, constant: 0),
+        ])
+
+        separatorNoVideoBottomConstraint = separatorView.bottomAnchor.constraint(equalTo: messageLabel.bottomAnchor, constant: 25)
+        separatorVideoBottomConstraint = separatorView.bottomAnchor.constraint(equalTo: videoTitle.bottomAnchor, constant: 20)
+        NSLayoutConstraint.activate([
+            separatorNoVideoBottomConstraint,
             separatorView.leftAnchor.constraint(equalTo: messageLabel.leftAnchor),
             separatorView.rightAnchor.constraint(equalTo: contentView.rightAnchor),
             separatorView.heightAnchor.constraint(equalToConstant: 0.5),
@@ -155,5 +207,21 @@ class LetterCell: UITableViewCell {
         timeLabel.text = viewModel.sentAt
         titleLabel.text = viewModel.title
         messageLabel.text = viewModel.message
+
+        if viewModel.videoId != nil {
+            videoThumbnail.isHidden = false
+            videoTitle.isHidden = false
+            playImageView.isHidden = false
+            videoThumbnail.kf.setImage(with: viewModel.videoPoster)
+            videoTitle.text = viewModel.videoTitle
+            separatorNoVideoBottomConstraint.isActive = false
+            separatorVideoBottomConstraint.isActive = true
+        } else {
+            videoThumbnail.isHidden = true
+            videoTitle.isHidden = true
+            playImageView.isHidden = true
+            separatorVideoBottomConstraint.isActive = false
+            separatorNoVideoBottomConstraint.isActive = true
+        }
     }
 }
