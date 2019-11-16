@@ -1,0 +1,40 @@
+{
+    "id": "hello",
+    "name": "Satu Pihlaja",
+    "avatar": "https://upload.wikimedia.org/wikipedia/commons/b/b1/KeiraKnightleyByAndreaRaffin2011_%28cropped%29.jpg",
+    "headline": "Pitkä kokemus psykiatrisesta erikoissairaanhoidosta. Valmennuksellinen orientaatio. Integratiivisen ja kognitiivisen psykoterapian viitekehykset. Kela.",
+    "languages": ["fi", "en"],
+    "location": "Helsinki: Kaisaniemi",
+    "titles": ["Psychologist", "Psychotherapist"],
+    "customer_groups": ["adult"],
+    "therapy_orientation": ["Integrative", "Cognitive"],
+    "sii_qualifications": ["individual therapy"],
+    "bio": "Satu (integratiivinen psykoterapeutti, PsL) ottaa vastaan yksilöterapia-asiakkaita (lyhyet ja pitkät terapiat). Sadulle voi varata ajan myös psykologin neuvontakäynnille tai valmennukseen. Sadun työskentelytapaa leimaa integratiivisuus ja kognitiivisen psykoterapian lähestymistapa, sekä valmennuksellinen orientaatio. Hänellä on pitkä työkokemus psykiatrisesta erikoissairaanhoidosta.",
+    "is_verified": true,
+    "feedback": {
+        "rating": 4,
+        "reviews": {
+            "count": 37,
+            "items": [
+                {
+                    "id": "hello",
+                    "name": "James",
+                    "text": "\"The best therapist I’ve ever met. I wasn’t expected at all\"",
+                    "rating": 5
+                },
+                {
+                    "id": "hello",
+                    "name": "James",
+                    "text": "\"The best therapist I’ve ever met. I wasn’t expected at all\"",
+                    "rating": 5
+                },
+                {
+                    "id": "hello",
+                    "name": "James",
+                    "text": "\"The best therapist I’ve ever met. I wasn’t expected at all\"",
+                    "rating": 5
+                }
+            ]
+        }
+    }
+}
