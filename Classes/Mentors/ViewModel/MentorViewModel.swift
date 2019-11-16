@@ -30,7 +30,7 @@ extension MentorViewModel {
                                 name: $0.name,
                                 description: $0.description,
                                 descriptionHeight: descriptionHeight,
-                                languages: $0.languages.reversed(),
+                                languages: $0.languages,
                                 ratingImageName: String(format: "rating_%i", $0.rating))
         }
     }

@@ -12,12 +12,14 @@ struct MentorDetailRatingLanguagesViewModel {
 
     let ratingImageName: String
     let reviewText: String
+    let languages: [String]
 }
 
 extension MentorDetailRatingLanguagesViewModel {
 
-    static func from(_ feedback: MentorDetail.Feedback) -> MentorDetailRatingLanguagesViewModel {
-        return MentorDetailRatingLanguagesViewModel(ratingImageName: String(format: "rating_%i", feedback.rating),
-                                                    reviewText: String(format: "%i reviews", feedback.reviews.count))
+    static func from(_ mentor: MentorDetail) -> MentorDetailRatingLanguagesViewModel {
+        return MentorDetailRatingLanguagesViewModel(ratingImageName: String(format: "rating_%i", mentor.feedback.rating),
+                                                    reviewText: String(format: "%i reviews", mentor.feedback.reviews.count),
+                                                    languages: mentor.languages)
     }
 }

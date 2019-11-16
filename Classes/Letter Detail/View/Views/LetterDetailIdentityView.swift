@@ -28,6 +28,15 @@ class LetterDetailIdentityView: UIView {
         return label
     }()
 
+    let languagesStackView: UIStackView = {
+        let sv = UIStackView()
+        sv.translatesAutoresizingMaskIntoConstraints = false
+        sv.axis = .horizontal
+        sv.spacing = 4
+        sv.distribution = .fillEqually
+        return sv
+    }()
+
     var nameLabelLeftConstraint: NSLayoutConstraint!
 
     init() {
@@ -35,6 +44,7 @@ class LetterDetailIdentityView: UIView {
 
         addSubview(onlineView)
         addSubview(nameLabel)
+        addSubview(languagesStackView)
 
         NSLayoutConstraint.activate([
             onlineView.centerYAnchor.constraint(equalTo: nameLabel.centerYAnchor),
@@ -52,6 +62,12 @@ class LetterDetailIdentityView: UIView {
         ])
 
         NSLayoutConstraint.activate([
+            languagesStackView.rightAnchor.constraint(equalTo: rightAnchor, constant: -22),
+            languagesStackView.centerYAnchor.constraint(equalTo: nameLabel.centerYAnchor, constant: 0),
+            languagesStackView.heightAnchor.constraint(equalToConstant: 12),
+        ])
+
+        NSLayoutConstraint.activate([
             bottomAnchor.constraint(equalTo: nameLabel.bottomAnchor, constant: 0),
         ])
     }
@@ -64,5 +80,18 @@ class LetterDetailIdentityView: UIView {
         onlineView.isHidden = !viewModel.user.isOnline
         nameLabel.text = viewModel.user.name
         nameLabelLeftConstraint.constant = viewModel.user.isOnline ? 6 : -8
+        setupLanguageStackView(with: viewModel.user.languages)
+    }
+
+    private func setupLanguageStackView(with languages: [String]) {
+        languagesStackView.removeAllArrangedSubviews()
+        for language in languages {
+            let countryImageView = UIImageView(image: UIImage(named: language.uppercased()))
+            countryImageView.contentMode = .scaleAspectFit
+            countryImageView.translatesAutoresizingMaskIntoConstraints = false
+            countryImageView.heightAnchor.constraint(equalToConstant: 12).isActive = true
+            countryImageView.widthAnchor.constraint(equalToConstant: 12).isActive = true
+            languagesStackView.addArrangedSubview(countryImageView)
+        }
     }
 }

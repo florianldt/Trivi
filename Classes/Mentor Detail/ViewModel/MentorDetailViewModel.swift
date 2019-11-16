@@ -50,7 +50,7 @@ struct MentorDetailViewModel {
             isVerified = false
             name = ""
         case .loaded(let mentor):
-            let ratingLanguagesViewModel = MentorDetailRatingLanguagesViewModel.from(mentor.feedback)
+            let ratingLanguagesViewModel = MentorDetailRatingLanguagesViewModel.from(mentor)
 
             var innerViewModels: [ViewModelType] = [
                 .avatar(URL(string: mentor.avatar)),

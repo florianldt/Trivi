@@ -42,6 +42,15 @@ class MentorCell: UICollectionViewCell {
         return button
     }()
 
+    let languagesStackView: UIStackView = {
+        let sv = UIStackView()
+        sv.translatesAutoresizingMaskIntoConstraints = false
+        sv.axis = .horizontal
+        sv.spacing = 5
+        sv.distribution = .fillEqually
+        return sv
+    }()
+
     let descriptionLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -66,6 +75,7 @@ class MentorCell: UICollectionViewCell {
         contentView.addSubview(content)
         contentView.addSubview(avatarImageView)
         contentView.addSubview(identityButton)
+        contentView.addSubview(languagesStackView)
         contentView.addSubview(descriptionLabel)
         contentView.addSubview(ratingImageView)
 
@@ -88,6 +98,12 @@ class MentorCell: UICollectionViewCell {
             identityButton.leftAnchor.constraint(equalTo: content.leftAnchor, constant: 11),
             identityButton.rightAnchor.constraint(equalTo: content.rightAnchor, constant: -11),
             identityButton.heightAnchor.constraint(equalToConstant: 18),
+        ])
+
+        NSLayoutConstraint.activate([
+            languagesStackView.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -12),
+            languagesStackView.centerYAnchor.constraint(equalTo: identityButton.centerYAnchor, constant: 0),
+            languagesStackView.heightAnchor.constraint(equalToConstant: 11),
         ])
 
         NSLayoutConstraint.activate([
@@ -115,5 +131,18 @@ class MentorCell: UICollectionViewCell {
         identityButton.setTitle(String(format: " %@", viewModel.name), for: .normal)
         descriptionLabel.text = viewModel.description
         ratingImageView.image = UIImage(named: viewModel.ratingImageName)
+        setupLanguageStackView(with: viewModel.languages)
+    }
+
+    private func setupLanguageStackView(with languages: [String]) {
+        languagesStackView.removeAllArrangedSubviews()
+        for language in languages {
+            let countryImageView = UIImageView(image: UIImage(named: language.uppercased()))
+            countryImageView.contentMode = .scaleAspectFit
+            countryImageView.translatesAutoresizingMaskIntoConstraints = false
+            countryImageView.heightAnchor.constraint(equalToConstant: 11).isActive = true
+            countryImageView.widthAnchor.constraint(equalToConstant: 11).isActive = true
+            languagesStackView.addArrangedSubview(countryImageView)
+        }
     }
 }
