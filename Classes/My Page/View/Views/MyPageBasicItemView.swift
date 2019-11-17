@@ -27,7 +27,7 @@ class MyPageBasicItemView: UIView {
     let badgeView: UIView = {
         let view = UIView()
         view.translatesAutoresizingMaskIntoConstraints = false
-        view.backgroundColor = UIColor.Names.darkBlue.color
+        view.backgroundColor = UIColor.Names.myPageBlue.color
         view.layer.cornerRadius = 18/2
         return view
     }()

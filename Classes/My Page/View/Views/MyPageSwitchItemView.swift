@@ -21,7 +21,7 @@ class MyPageSwitchItemView: UIView {
     let switchView: UISwitch = {
         let sw = UISwitch()
         sw.translatesAutoresizingMaskIntoConstraints = false
-        sw.onTintColor = UIColor.Names.darkBlue.color
+        sw.onTintColor = UIColor.Names.myPageBlue.color
         return sw
     }()
 

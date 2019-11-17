@@ -103,6 +103,8 @@ extension NetworkingProvider {
             case HttpStatus.success.code:
                 do {
                     let videoSections = try JSONDecoder().decode([VideoFeedSection].self, from: data)
+                    print("-- TRIVI AI \(videoSections)")
+
                     completionHandler?(.success(videoSections))
                     return
                 } catch {
@@ -180,6 +182,7 @@ extension NetworkingProvider {
                 do {
                     let conversation = try JSONDecoder().decode(Conversation.self, from: data)
                     completionHandler?(.success(conversation))
+                    print("-- TRIVI AI \(conversation)")
                     return
                 } catch {
                     print(error)
@@ -200,6 +203,8 @@ extension NetworkingProvider {
             completionHandler?(.failure(Error.invalidURL))
             return
         }
+
+        print("-- TRIVI AI \(userRequest)")
 
         var request = URLRequest(url: url)
         request.httpMethod = "POST"
@@ -225,6 +230,8 @@ extension NetworkingProvider {
                 do {
                     let response = try JSONDecoder().decode(UserActivityResponse.self, from: data)
                     completionHandler?(.success(response))
+                    print("-- TRIVI AI \(response)")
+
                     return
                 } catch {
                     print(error.localizedDescription)
@@ -243,6 +250,8 @@ extension NetworkingProvider {
                 completionHandler?(.failure(Error.invalidURL))
                 return
             }
+
+        print("-- TRIVI AI \(conversation)")
 
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
@@ -268,6 +277,8 @@ extension NetworkingProvider {
                 do {
                     let response = try JSONDecoder().decode(BotMessage.self, from: data)
                     completionHandler?(.success(response))
+                    print("-- TRIVI AI \(response)")
+
                     return
                 } catch {
                     print(error)

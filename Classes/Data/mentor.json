@@ -24,14 +24,14 @@
                 },
                 {
                     "id": "hello",
-                    "name": "James",
-                    "text": "\"The best therapist I’ve ever met. I wasn’t expected at all\"",
-                    "rating": 5
+                    "name": "Veronica",
+                    "text": "\"Great professionalism and experience. She understood me perfectly.\"",
+                    "rating": 4
                 },
                 {
                     "id": "hello",
-                    "name": "James",
-                    "text": "\"The best therapist I’ve ever met. I wasn’t expected at all\"",
+                    "name": "Eric",
+                    "text": "\"I can't recommand enought Satu's services. She gave me back hope in life.\"",
                     "rating": 5
                 }
             ]

@@ -89,6 +89,8 @@ extension ChatInteractor {
                     updatedMessages.append(contentsOf: messages)
                 }
                 if let qnaResponse = response.activities.first?.text.toQNAResponse {
+                                        print("-- TRIVI AI \(qnaResponse)")
+
                     switch qnaResponse.type {
                     case 0: updatedMessages.append(TextMessage(id: "0", user: User(with: .bot), timestamp: "", text: qnaResponse.answer))
                     case 1:

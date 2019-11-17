@@ -20,6 +20,7 @@ extension UIColor {
         case onlineGreen
         case blackBlue
         case separator
+        case myPageBlue
 
         var color: UIColor {
             guard let color = UIColor(named: self.rawValue) else {

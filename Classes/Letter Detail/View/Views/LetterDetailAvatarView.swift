@@ -14,6 +14,7 @@ class LetterDetailAvatarView: UIView {
         let iv = UIImageView()
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.contentMode = .scaleAspectFill
+        iv.image = UIImage(named: "letter_detail")
         return iv
     }()
 
@@ -40,6 +41,5 @@ class LetterDetailAvatarView: UIView {
     }
 
     func configure(with viewModel: LetterViewModel) {
-        avatarImageView.image = UIImage(named: viewModel.user.avatar)
     }
 }
