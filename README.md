@@ -1,5 +1,5 @@
 # Trivi
-Hack Junction 2019
+Hack Junction 2019 - Team Avanssion
 
 ## Repositories
 
