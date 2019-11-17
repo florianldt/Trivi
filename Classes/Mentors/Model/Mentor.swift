@@ -9,10 +9,21 @@
 import Foundation
 
 struct Mentor: Decodable {
-    let id: Int
+    let id: String
     let avatar: String
     let name: String
     let description: String
     let languages: [String]
     let rating: Int
+    let isVerified: Bool
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case avatar
+        case name
+        case description
+        case languages
+        case rating
+        case isVerified = "is_verified"
+    }
 }

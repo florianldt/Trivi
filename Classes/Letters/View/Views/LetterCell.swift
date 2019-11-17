@@ -8,14 +8,19 @@
 
 import UIKit
 
+protocol LetterCellDelegate: class {
+    func didTapThumbnail(for id: String)
+}
+
 class LetterCell: UITableViewCell {
 
     var viewModel: LetterViewModel?
+    weak var delegate: LetterCellDelegate?
 
     let avatarImageView: UIImageView = {
         let iv = UIImageView()
         iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.contentMode = .scaleAspectFill
+        iv.contentMode = .scaleAspectFit
         iv.layer.cornerRadius = 45 / 2
         iv.layer.masksToBounds = true
         return iv
@@ -76,6 +81,7 @@ class LetterCell: UITableViewCell {
         iv.translatesAutoresizingMaskIntoConstraints = false
         iv.layer.masksToBounds = true
         iv.layer.cornerRadius = 12
+        iv.isUserInteractionEnabled = true
         iv.contentMode = .scaleAspectFill
         return iv
     }()
@@ -192,6 +198,9 @@ class LetterCell: UITableViewCell {
         NSLayoutConstraint.activate([
             contentView.bottomAnchor.constraint(equalTo: separatorView.bottomAnchor, constant: 23),
         ])
+
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(onVideoThumbnail))
+        videoThumbnail.addGestureRecognizer(tapGestureRecognizer)
     }
 
     required init?(coder: NSCoder) {
@@ -200,7 +209,7 @@ class LetterCell: UITableViewCell {
 
     func configure(with viewModel: LetterViewModel) {
         self.viewModel = viewModel
-        avatarImageView.kf.setImage(with: viewModel.user.avatar)
+        avatarImageView.image = UIImage(named: viewModel.user.avatar)
         onlineView.isHidden = !viewModel.user.isOnline
         identityButton.setImage(viewModel.user.isVerified ? UIImage(named: "bookmark") : nil, for: .normal)
         identityButton.setTitle(viewModel.user.isVerified ? String(format: " %@", viewModel.user.name) : viewModel.user.name, for: .normal)
@@ -223,5 +232,14 @@ class LetterCell: UITableViewCell {
             separatorVideoBottomConstraint.isActive = false
             separatorNoVideoBottomConstraint.isActive = true
         }
+    }
+
+    @objc
+    private func onVideoThumbnail() {
+        guard
+            let viewModel = viewModel,
+            let videoId = viewModel.videoId
+            else { return }
+        delegate?.didTapThumbnail(for: videoId)
     }
 }

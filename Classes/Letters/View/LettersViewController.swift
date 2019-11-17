@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import SafariServices
 
 class LettersViewController: UIViewController {
 
@@ -96,6 +97,7 @@ extension LettersViewController: UITableViewDataSource {
         case .letter(let viewModel):
             let cell = tableView.dequeue(LetterCell.self, for: indexPath)
             cell.configure(with: viewModel)
+            cell.delegate = self
             returnCell = cell
         case .failure(let viewModel):
             let cell = tableView.dequeue(ErrorTVCell.self, for: indexPath)
@@ -114,5 +116,13 @@ extension LettersViewController: UITableViewDelegate {
             let viewModel = cell.viewModel
             else { return }
         showLetterDetail(for: viewModel)
+    }
+}
+
+extension LettersViewController: LetterCellDelegate {
+    func didTapThumbnail(for id: String) {
+        guard let url = URL(string: String(format: "https://www.youtube.com/watch?v=%@", id)) else { return }
+        let safariViewController = SFSafariViewController(url: url)
+        present(safariViewController, animated: true)
     }
 }

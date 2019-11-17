@@ -16,7 +16,7 @@ class VideoFeedDefaultSectionCell: UITableViewCell {
     let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 30, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 27, weight: .bold)
         label.textColor = UIColor.Names.darkBlue.color
         label.numberOfLines = 1
         return label

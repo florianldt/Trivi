@@ -12,7 +12,7 @@ struct LetterViewModel {
 
     struct UserViewModel {
         let id: String
-        let avatar: URL?
+        let avatar: String
         let isVerified: Bool
         let name: String
         let isOnline: Bool
@@ -37,7 +37,7 @@ extension LetterViewModel {
         return letters
             .map {
                 let userViewModel = UserViewModel(id: $0.user.id,
-                                                  avatar: URL(string: $0.user.avatar),
+                                                  avatar: $0.user.avatar,
                                                   isVerified: $0.user.isVerified,
                                                   name: $0.user.name,
                                                   isOnline: $0.user.isOnline,

@@ -1,26 +1,74 @@
 [
     {
         "id": "hello",
-        "avatar": "https://komppi.net/wp-content/uploads/2018/08/Anni-Orava-400x400-370x370.jpg",
+        "avatar": "0",
         "name": "Anni",
         "description": "Annilla on kokemusta monenlaisten oireiden (ahdistus, masennus, psykoosit) hoidosta. Kognitiivisen psykoterapian viitekehys. Kela.",
         "languages": ["fi", "gb"],
-        "rating": 4
+        "rating": 4,
+        "is_verified": true
     },
     {
         "id": "hello",
-        "avatar": "https://komppi.net/wp-content/uploads/2019/08/Arto-Pylv%C3%A4s-370x370.jpg",
+        "avatar": "1",
+        "name": "Satu",
+        "description": "Pitkä kokemus psykiatrisesta erikoissairaanhoidosta. Valmennuksellinen orientaatio. Integratiivisen ja kognitiivisen psykoterapian viitekehykset. Kela.",
+        "languages": ["fi"],
+        "rating": 4,
+        "is_verified": true
+    },
+    {
+        "id": "hello",
+        "avatar": "2",
+        "name": "Anni",
+        "description": "Annilla on kokemusta monenlaisten oireiden (ahdistus, masennus, psykoosit) hoidosta. Kognitiivisen psykoterapian viitekehys. Kela.",
+        "languages": ["fi", "gb"],
+        "rating": 5,
+        "is_verified": true
+    },
+    {
+        "id": "hello",
+        "avatar": "3",
+        "name": "Paola",
+        "description": "I would be happy to support you in addressing a positive state of mind. I’m already your friend :)",
+        "languages": ["fi", "se", "gb"],
+        "rating": 4,
+        "is_verified": false
+    },
+    {
+        "id": "hello",
+        "avatar": "4",
+        "name": "Riita",
+        "description": "I would be happy to support you in your journey. I’m already your friend :) ",
+        "languages": ["fi", "gb"],
+        "rating": 4,
+        "is_verified": false
+    },
+    {
+        "id": "hello",
+        "avatar": "5",
+        "name": "Johanna",
+        "description": "Pitkä ura perheneuvolassa. Kognitiivisen ja kognitiivisen käyttäytymisterapian psykoterapeuttiset viitekehykset. Johanna hyödyntää myös parisuhteen Solmu -menetelmää pariterapeuttisessa työskentelyssä.",
+        "languages": ["fi", "gb"],
+        "rating": 4,
+        "is_verified": true
+    },
+    {
+        "id": "hello",
+        "avatar": "6",
         "name": "Arto",
         "description": "Arto on kiinnostunut tunteiden säätelystä ja ymmärtämisestä. Hän on tottunut työskentelemään nuorten ja aikuisten kanssa vaikeissakin tilanteissa. Psykodynaaminen viitekehys. Kela.",
         "languages": ["fi"],
-        "rating": 4
+        "rating": 4,
+        "is_verified": true
     },
     {
         "id": "hello",
-        "avatar": "https://komppi.net/wp-content/uploads/2019/08/Marika-Lahtinen-3.png",
-        "name": "Anni",
-        "description": "Marikalla on pitkä työkokemus psykoterapeuttina, perusterveydenhuollossa sekä terveydenhuollon johtotehtävissä.",
-        "languages": ["fi"],
-        "rating": 5
-    }
+        "avatar": "7",
+        "name": "Marjatta",
+        "description": "I would be happy to support you in addressing a positive state of mind. I’m already your friend :) ",
+        "languages": ["fi", "se", "gb"],
+        "rating": 5,
+        "is_verified": false
+    },
 ]

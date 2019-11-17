@@ -12,6 +12,7 @@ import RxCocoa
 
 protocol ChatInteractorDelegate: class {
     func showPrompts(_ prompts: [QNAResponse.Prompt])
+    func showInput()
 }
 
 class ChatInteractor {
@@ -38,7 +39,7 @@ extension ChatInteractor {
             case .success(let conversation):
                 print(conversation)
                 strongSelf.conversation = conversation
-                strongSelf.sendMessage(with: "starter0", isHidden: true)
+                strongSelf.sendMessage(with: Secrets.hiddenMessageIndex == 0 ? "starter0" : "starter1", isHidden: true)
             case .failure(let error):
                 print(error.localizedDescription)
             }
@@ -107,6 +108,12 @@ extension ChatInteractor {
                     }
 
                     strongSelf.viewModel.accept(.init(with: .loaded(updatedMessages)))
+
+                    for item in qnaResponse.metadata {
+                        if item.name == "typing" {
+                            strongSelf.delegate?.showInput()
+                        }
+                    }
                     if !qnaResponse.context.prompts.isEmpty {
                         strongSelf.delegate?.showPrompts(qnaResponse.context.prompts)
                     }

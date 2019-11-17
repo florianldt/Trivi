@@ -16,11 +16,12 @@ class VideoFeedLargeSectionCell: UITableViewCell {
 
     var viewModel: VideoSectionViewModel?
     weak var delegate: VideoFeedSectionCellDelegate?
+    var titleLabelHeightConstraint:NSLayoutConstraint!
 
     let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.font = UIFont.systemFont(ofSize: 30, weight: .bold)
+        label.font = UIFont.systemFont(ofSize: 27, weight: .bold)
         label.textColor = UIColor.Names.darkBlue.color
         label.numberOfLines = 1
         return label
@@ -49,11 +50,12 @@ class VideoFeedLargeSectionCell: UITableViewCell {
         contentView.addSubview(titleLabel)
         contentView.addSubview(collectionView)
 
+        titleLabelHeightConstraint = titleLabel.heightAnchor.constraint(equalToConstant: 0)
         NSLayoutConstraint.activate([
             titleLabel.topAnchor.constraint(equalTo: contentView.topAnchor),
             titleLabel.leftAnchor.constraint(equalTo: contentView.leftAnchor, constant: 22),
             titleLabel.rightAnchor.constraint(equalTo: contentView.rightAnchor, constant: -22),
-            titleLabel.heightAnchor.constraint(equalToConstant: 36),
+            titleLabelHeightConstraint,
         ])
 
         NSLayoutConstraint.activate([
@@ -75,6 +77,7 @@ class VideoFeedLargeSectionCell: UITableViewCell {
     func configure(with viewModel: VideoSectionViewModel) {
         self.viewModel = viewModel
         titleLabel.text = viewModel.title
+        titleLabelHeightConstraint.constant = viewModel.title.isEmpty ? 0 : 36
     }
 }
 

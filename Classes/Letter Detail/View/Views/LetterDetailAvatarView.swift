@@ -40,6 +40,6 @@ class LetterDetailAvatarView: UIView {
     }
 
     func configure(with viewModel: LetterViewModel) {
-        avatarImageView.kf.setImage(with: viewModel.user.avatar)
+        avatarImageView.image = UIImage(named: viewModel.user.avatar)
     }
 }

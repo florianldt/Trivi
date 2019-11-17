@@ -25,8 +25,8 @@ class VideoFeedLargeCell: UICollectionViewCell {
     let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
-        label.numberOfLines = 2
-        label.font = UIFont.systemFont(ofSize: 21, weight: .semibold)
+        label.numberOfLines = 3
+        label.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         label.textColor = UIColor.Names.blackBlue.color
         return label
     }()

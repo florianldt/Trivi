@@ -19,9 +19,14 @@ extension UITableView {
         return cell
     }
 
-    func scrollToBottom() {
-        let bottomOffset = CGPoint(x: 0.0, y: self.contentSize.height - self.bounds.size.height)
-        self.setContentOffset(bottomOffset, animated: true)
+    func scrollToBottom(){
+
+        DispatchQueue.main.async {
+            let indexPath = IndexPath(
+                row: self.numberOfRows(inSection:  self.numberOfSections - 1) - 1,
+                section: self.numberOfSections - 1)
+            self.scrollToRow(at: indexPath, at: .bottom, animated: true)
+        }
     }
 }
 

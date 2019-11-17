@@ -26,9 +26,10 @@ class BotChoiceSimpleViewController: UIViewController {
         tv.delegate = self
         tv.register(UITableViewCell.self)
         tv.separatorStyle = .none
+        tv.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
+        tv.bounces = false
         tv.layer.cornerRadius = 33
         tv.layer.maskedCorners = [.layerMaxXMinYCorner, .layerMinXMinYCorner]
-        tv.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         return tv
     }()
 
@@ -44,7 +45,7 @@ class BotChoiceSimpleViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        view.backgroundColor = UIColor.Names.clearBlue.color
+        view.backgroundColor = UIColor.clear
         view.addSubview(tableView)
 
         NSLayoutConstraint.activate([

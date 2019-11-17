@@ -37,7 +37,6 @@ class MentorCell: UICollectionViewCell {
         button.isUserInteractionEnabled = false
         button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .semibold)
         button.contentHorizontalAlignment = .left
-        button.setImage(UIImage(named: "bookmark"), for: .normal)
         button.setTitleColor(UIColor.Names.darkBlue.color, for: .normal)
         return button
     }()
@@ -127,8 +126,9 @@ class MentorCell: UICollectionViewCell {
 
     func configure(with viewModel: MentorViewModel) {
         self.viewModel = viewModel
-        avatarImageView.kf.setImage(with: viewModel.avatar)
-        identityButton.setTitle(String(format: " %@", viewModel.name), for: .normal)
+        avatarImageView.image = UIImage(named: viewModel.avatar)
+        identityButton.setTitle(viewModel.isVerified ? String(format: " %@", viewModel.name) : viewModel.name, for: .normal)
+        identityButton.setImage(viewModel.isVerified ? UIImage(named: "bookmark") : nil, for: .normal)
         descriptionLabel.text = viewModel.description
         ratingImageView.image = UIImage(named: viewModel.ratingImageName)
         setupLanguageStackView(with: viewModel.languages)

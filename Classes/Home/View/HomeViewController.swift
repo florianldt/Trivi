@@ -92,6 +92,12 @@ class HomeViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         isVisible = true
+
+        if Secrets.hiddenMessageIndex == 0 {
+            if chatViewController == nil {
+                addChatViewController()
+            }
+        }
     }
 
     override func viewDidDisappear(_ animated: Bool) {

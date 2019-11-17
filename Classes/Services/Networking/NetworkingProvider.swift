@@ -69,41 +69,14 @@ class NetworkingProvider: NetworkingProviderProtocol {
 extension NetworkingProvider {
 
     func loadMentors(completionHandler: ((NetworkingProviderResultWithValue<[Mentor]>) -> Void)?) {
-        guard let url = URL(string: Ressources.mentors.path) else {
-            completionHandler?(.failure(Error.invalidURL))
-            return
-        }
-
-        var request = URLRequest(url: url)
-        request.httpMethod = "GET"
-        URLSession.shared.dataTask(with: request) { (data, response, error) in
-            guard
-                let data = data,
-                let response = response as? HTTPURLResponse else {
-                    guard let error = error else {
-                        completionHandler?(.failure(Error.somethingWentWrong))
-                        return
-                    }
-                    completionHandler?(.failure(Error.network))
-                    return
-                }
-            print("-- " + response.statusCode.description + " --")
-            switch response.statusCode {
-            case HttpStatus.success.code:
-                do {
-                    let mentors = try JSONDecoder().decode([Mentor].self, from: data)
-                    completionHandler?(.success(mentors))
-                    return
-                } catch {
-                    print(error)
-                    completionHandler?(.failure(Error.somethingWentWrong))
-                    return
-                }
-            default:
-                completionHandler?(.failure(Error.somethingWentWrong))
-                return
+        Json().from("mentors", type: [Mentor].self) { result in
+            switch result {
+            case .success(let mentors):
+                completionHandler?(.success(mentors))
+            case .failure(let error):
+                completionHandler?(.failure(error))
             }
-        }.resume()
+        }
     }
 
     func loadVideoFeed(completionHandler: ((NetworkingProviderResultWithValue<[VideoFeedSection]>) -> Void)?) {
