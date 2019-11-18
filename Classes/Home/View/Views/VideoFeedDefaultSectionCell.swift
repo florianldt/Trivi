@@ -71,6 +71,7 @@ class VideoFeedDefaultSectionCell: UITableViewCell {
     func configure(with viewModel: VideoSectionViewModel) {
         self.viewModel = viewModel
         titleLabel.text = viewModel.title
+        collectionView.reloadData()
     }
 }
 

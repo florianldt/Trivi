@@ -78,6 +78,7 @@ class VideoFeedLargeSectionCell: UITableViewCell {
         self.viewModel = viewModel
         titleLabel.text = viewModel.title
         titleLabelHeightConstraint.constant = viewModel.title.isEmpty ? 0 : 36
+        collectionView.reloadData()
     }
 }
 
